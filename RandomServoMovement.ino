@@ -19,28 +19,44 @@ Servo zservo;
 
 int xpos; 
 int ypos; 
+int zpos;
 
 void setup() { 
-	
-  	xservo.attach(9); //Attach the signal pin to pin 9 
-	yservo.attach(10); //Attach the signal pin to pin 10
-	zservo.attach(11); //Attach the signal pin to pin 11
+  
+    xservo.attach(9); //Attach the signal pin to pin 9 
+  yservo.attach(10); //Attach the signal pin to pin 10
+  zservo.attach(11); //Attach the signal pin to pin 11
+  
+    Serial.begin(9600);
+    Serial.print('\n');
+    Serial.print('\n');
+    Serial.print("Ardunio Servo Swing");
+    Serial.print('\n');
+    Serial.print('\n');
 } 
 
 void loop() { 
 { 
-	ypos = random(180); // The degree in random number selection 
-	yservo.write(ypos); 
-	delay(200); //Delay on Servo change
+  xpos = random(180);  
+  xservo.write(xpos);
+  
+    Serial.print("Servo 1: ");
+    Serial.println(xpos); 
 } 
 { 
-	xpos = random(180);  
-	xservo.write(xpos); 
-	delay(200); 
+  ypos = random(180);  
+  yservo.write(ypos);
+  
+    Serial.print("Servo 2: ");
+    Serial.println(ypos);
 } 
 { 
-	ypos = random(180); 
-	zservo.write(ypos);  
-	delay(200); 
+  zpos = random(180); 
+  zservo.write(zpos);
+  
+    Serial.print("Servo 3: ");
+    Serial.println(zpos);
+    Serial.print('\n');
+  delay(1000); 
 } 
 } 
