@@ -27,7 +27,7 @@ void setup() {
   yservo.attach(10); //Attach the signal pin to pin 10
   zservo.attach(11); //Attach the signal pin to pin 11
   
-    Serial.begin(9600);
+    Serial.begin(9600); // This displays the rotation position in the serial monitor
     Serial.print('\n');
     Serial.print('\n');
     Serial.print("Ardunio Servo Swing");
